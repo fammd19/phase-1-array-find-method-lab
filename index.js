@@ -1,14 +1,4 @@
 // code your solution here
-/*function superBowlWin(record) {
-    let winYear;
-    if (record["result"] === "W") {
-        winYear = record.year;
-    }
-    return winYear;
-}
-
-console.log(superBowlWin());
-*/
 const record = [
     { year: "2018", result: "N/A"},
     { year: "2017", result: "N/A"},
@@ -72,14 +62,9 @@ const record = [
   ];
 
 //Return the year of the last win
-function superbowlWin (arr) {
-    const hasWin = record.some(entry => entry.result === "W");
-    if (hasWin === true) {
-        const winYear = arr.find(({result}) => result === "W");
-        return winYear.year;
-    } else {
-        return undefined;
-    }
+function superbowlWin (records) {
+    const win = records.find((record) => record.result === "W");
+    return win ? win.year : undefined;
 };
 
 console.log(superbowlWin(record));
